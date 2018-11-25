@@ -18,15 +18,15 @@ export class AuthService {
     return token !== null;
   }
   login(user: User): Observable<Token> {
-    return this.http.post<Token>('/api/user/login', user);
+    return this.http.post<Token>('/api/login', user);
   }
 
   logout(): Observable<Token> {
-    return this.http.get<Token>('/api/user/logout');
+    return this.http.get<Token>('/api/logout');
   }
 
   register(user: User): Observable<Token> {
-    return this.http.post<Token>('/api/user/register', user);
+    return this.http.post<Token>('/api/register', user);
   }
 
 }

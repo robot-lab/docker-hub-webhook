@@ -1,3 +1,25 @@
-<p>
-  login works!
-</p>
+<mat-card class="group-form-container">
+  <mat-card-content>
+    <mat-card-title>Login</mat-card-title>
+    <div class="content">
+      <div class="flex-item-first">
+        <div class="name line">
+          <mat-form-field>
+            <input matInput [(ngModel)]="user.username" placeholder="username">
+          </mat-form-field>
+        </div>
+        <div class="name line">
+          <mat-form-field>
+            <input matInput [(ngModel)]="user.password" placeholder="password" type="password">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  {{text}}
+  <mat-card-actions>
+    <button mat-flat-button (click)="login(user)">login</button>
+  </mat-card-actions>
+
+</mat-card>
+
