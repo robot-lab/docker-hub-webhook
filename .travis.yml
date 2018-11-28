@@ -16,13 +16,13 @@ node_js:
 before_install:
 - cd frontend
 - npm install npm@6 -g
+- npm i -g npm
 - npm cache verify
 - npm prune
 - npm update
 
 install:
 - npm install
-
 
 script:
 - npm run ci:travis
