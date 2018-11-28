@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Setting creator</h1>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.key" placeholder="Key">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.command" placeholder="Command">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.service_name" placeholder="Service Name">
+  </mat-form-field>
+  <br>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data">Create</button>
+</mat-dialog-actions>

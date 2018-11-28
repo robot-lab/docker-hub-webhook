@@ -1,0 +1,25 @@
+<mat-card *ngIf="set" class="check-form-container">
+  <mat-card-content>
+    <h1>Edit check "{{ set.key }}"</h1>
+    <div class="block">
+      <mat-form-field>
+        <input matInput [(ngModel)]="set.key" placeholder="Name">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="set.command" placeholder="Url">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="set.service_name" placeholder="Frequency">
+      </mat-form-field>
+      <br>
+
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="save()">Save</button>
+  </mat-card-actions>
+</mat-card>

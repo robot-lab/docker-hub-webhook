@@ -27,8 +27,8 @@ export class LoginComponent {
           token => {
             this.storage.set('auth-token', token.token);
             console.log(token.token);
-            if (!this.authService.isAuthenticated()) {
-              this.text = 'Неверный логин или пароль.';
+            if (!this.authService.isAuthenticated() && (token.message !== undefined || token.message === null)) {
+              this.text = token.message;
             } else {
               this.router.navigateByUrl('/settings');
               window.location.reload();

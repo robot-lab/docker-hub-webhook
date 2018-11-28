@@ -29,6 +29,9 @@ import {
   MatNativeDateModule, MatDialogModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { SettingsComponent } from './settings/settings.component';
+import { SettingCreatorDialog } from './setting-creator-dialog/setting-creator-dialog.component';
+import { SettingsEditorComponent } from './settings-editor/settings-editor.component';
 
 
 
@@ -37,6 +40,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     LoginComponent,
+    SettingsComponent,
+    SettingCreatorDialog,
+    SettingsEditorComponent,
   ],
   imports: [
       FormsModule,
@@ -67,6 +73,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
+  ],
+  entryComponents: [
+    SettingCreatorDialog,
   ],
   providers: [HttpClientModule,
     {provide: HTTP_INTERCEPTORS,

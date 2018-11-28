@@ -19,7 +19,7 @@ export class ApiInterceptorService implements HttpInterceptor{
     this.token = this.storage.get('auth-token') ;
     console.log(this.token);
     if (this.token !== null && this.token !== undefined) {
-      const request1 = req.clone({headers: req.headers.set('Authorization', 'Token ' + this.token)});
+      const request1 = req.clone({headers: req.headers.set('Authorization', this.token)});
       return next.handle(request1);
     }
     return next.handle(req);
