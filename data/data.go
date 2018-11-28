@@ -10,7 +10,7 @@ import (
 
 type Data struct {
 	settings map[string]*Settings
-	mutex sync.Mutex
+	mutex    sync.Mutex
 }
 
 func (d *Data) Load(filename string) {
@@ -39,7 +39,12 @@ func (d *Data) Save(filename string) {
 }
 
 func (d *Data) AddSettings(key string, cText string, serviceName string) {
-	d.settings[key] = GenSettings(key,cText,serviceName)
+	d.settings[key] = GenSettings(key, cText, serviceName)
+}
+
+func (d *Data) EditSettings(mainKey string, key string, cText string, serviceName string) {
+	d.DeleteSettings(mainKey)
+	d.settings[key] = GenSettings(key, cText, serviceName)
 }
 
 func (d *Data) DeleteSettings(key string) {

@@ -18,8 +18,8 @@ export class SettingsService {
     return this.http.get<Setting>(this.url +'/' + key);
   }
 
-  updateSetting(data: Setting): Observable<Setting> {
-    return this.http.put<Setting>(this.url +'/' + data.key, data);
+  updateSetting(data: Setting, key: string): Observable<Setting> {
+    return this.http.put<Setting>(this.url +'/' + key, data);
   }
 
   deleteSetting(key: string): Observable<Setting> {

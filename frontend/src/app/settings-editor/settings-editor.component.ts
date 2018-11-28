@@ -10,6 +10,7 @@ import {Setting} from "../setting";
 })
 export class SettingsEditorComponent implements OnInit {
   @Input() set: Setting;
+  private key: string;
   constructor(
               private route: ActivatedRoute,
               private setsService: SettingsService) { }
@@ -18,14 +19,14 @@ export class SettingsEditorComponent implements OnInit {
     this.getSet()
   }
   getSet(): void {
-    const key = this.route.snapshot.queryParamMap.get('key');
-    console.log(key);
-    this.setsService.getSetting(key)
+    this.key = this.route.snapshot.queryParamMap.get('key');
+    console.log(this.key);
+    this.setsService.getSetting(this.key)
       .subscribe(set => this.set = set);
   }
 
   save(): void {
-    this.setsService.updateSetting(this.set)
+    this.setsService.updateSetting(this.set, this.key)
       .subscribe(set => this.set = set);
   }
 }

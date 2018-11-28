@@ -10,11 +10,11 @@ import (
 )
 
 func Settings(response http.ResponseWriter, request *http.Request) {
-	token, ok:= request.Header["Authorization"]
-	if !ok || token[0] != Token{
+	token, ok := request.Header["Authorization"]
+	if !ok || token[0] != Token {
 		fmt.Println(token)
 		response.WriteHeader(401)
-		fmt.Fprintf(response,"{\"token\": null, \"message\":\"Not valid login or password\"}")
+		fmt.Fprintf(response, "{\"token\": null, \"message\":\"Not valid login or password\"}")
 		return
 	}
 	url := request.URL
@@ -44,6 +44,14 @@ func Settings(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 	if validSettingKey.Match(path) && request.Method == "PUT" {
+		decoder := json.NewDecoder(request.Body)
+		key := strings.Split(url.Path, "/api/admin/")[1]
+		var jsonData map[string]string
+		decoder.Decode(&jsonData)
+		SettingsData.EditSettings(key, jsonData["key"], jsonData["command"], jsonData["service_name"])
+		SettingsData.Save("settings.json")
+		settings := SettingsData.GetSetting(jsonData["key"])
+		fmt.Fprint(response, settings)
 		return
 	}
 	if validSettingKey.Match(path) && request.Method == "DELETE" {
