@@ -49,11 +49,4 @@ export class SettingsComponent implements OnInit {
       .subscribe(_ => this.sets = this.sets.filter(set => set.key != key));
   }
 
-  updateSet(data): void {
-    this.checkService.updateSetting(data).subscribe(set => {
-      const index = this.sets.findIndex(set => set.key === data.key);
-      this.sets[index] = set;
-    });
-  }
-
 }

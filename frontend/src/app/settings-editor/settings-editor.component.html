@@ -3,17 +3,17 @@
     <h1>Edit check "{{ set.key }}"</h1>
     <div class="block">
       <mat-form-field>
-        <input matInput [(ngModel)]="set.key" placeholder="Name">
+        <input matInput [(ngModel)]="set.key" placeholder="Key">
       </mat-form-field>
       <br>
 
       <mat-form-field>
-        <input matInput [(ngModel)]="set.command" placeholder="Url">
+        <textarea matInput [(ngModel)]="set.command" placeholder="Command"></textarea>
       </mat-form-field>
       <br>
 
       <mat-form-field>
-        <input matInput [(ngModel)]="set.service_name" placeholder="Frequency">
+        <input matInput [(ngModel)]="set.service_name" placeholder="Service name">
       </mat-form-field>
       <br>
 
