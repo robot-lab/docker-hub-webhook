@@ -1,1 +1,1 @@
-{"testkey":{"key":"testkey","command":"asd","service_name":"asd"},"testkey2":{"key":"testkey2","command":"asd","service_name":"asd"},"testkey234":{"key":"testkey234","command":"asd","service_name":"asd"}}
+{"testkey":{"key":"testkey","command":"asd\nasfsda\nsdfsdf","service_name":"asd"},"testkey2":{"key":"testkey2","command":"asd","service_name":"asd"},"testkey234":{"key":"testkey234","command":"asd","service_name":"asd"}}
