@@ -1,5 +1,7 @@
 # docker-hub-webhook
 
+[![Build Status](https://travis-ci.com/robot-lab/docker-hub-webhook.svg?branch=master)](https://travis-ci.com/robot-lab/docker-hub-webhook)
+
 Проект по созданию сервера для деплоя с docker-hub
 ## Starting
 для запуска надо выполнить следующее:
